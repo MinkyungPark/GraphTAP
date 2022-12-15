@@ -1,0 +1,62 @@
+
+seed: 42
+dataset: 'halfcheetah-medium-v2' # halfcheetah-medium-expert-v2
+max_path_length: 1000
+N: 100
+discount: 0.99
+n_layer: 4
+n_head: 4
+
+n_epochs_ref: 50
+n_saves: 5
+device: 'cuda'
+
+# n_embd: 32
+batch_size: 256
+learning_rate: 6e-4
+lr_decay: True
+
+embd_pdrop: 0.1
+resid_pdrop: 0.1
+attn_pdrop: 0.1
+
+step: 1
+subsampled_sequence_length: 10
+termination_penalty: -100
+
+position_weight: 1
+discretizer: 'QuantileDiscretizer'
+# discretizer: null
+action_weight: 5
+reward_weight: 1
+value_weight: 1
+
+###
+n_epochs_ref: 50
+n_saves: 3
+logbase: '/workspace/geo_tt/saves'
+
+K: 512
+latent_step: 3
+n_embd: 512
+trajectory_embd: 512
+learning_rate: 2e-4
+lr_decay: False
+
+step: 1
+# subsampled_sequence_length: 25
+exp_name: 'graph_tap'
+
+first_action_weight: 0
+sum_reward_weight: 0
+last_value_weight: 0
+suffix: ''
+
+# normalize: True
+# normalize_reward: True
+bottleneck: "pooling"
+masking: "uniform"
+disable_goal: False
+residual: True
+ma_update: True
+state_conditional: True
